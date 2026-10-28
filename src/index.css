@@ -1,0 +1,134 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  overflow: hidden;
+}
+
+.app {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: rgba(0, 0, 0, 0.18);
+  border: 2px solid currentColor;
+  border-radius: 12px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.fullscreen-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 52px;
+  height: 52px;
+  font-size: 24px;
+}
+
+.call {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  animation: pop 0.35s ease-out;
+}
+
+.side {
+  font-size: clamp(64px, 18vw, 220px);
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.limb-icon {
+  font-size: clamp(120px, 32vh, 360px);
+  margin: 2vh 0;
+}
+
+.part {
+  font-size: clamp(28px, 6vw, 72px);
+  font-weight: 700;
+}
+
+.controls {
+  position: absolute;
+  bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.controls button {
+  width: 52px;
+  height: 52px;
+  font-size: 20px;
+}
+
+.seconds {
+  min-width: 3ch;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.positions {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+.positions li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
